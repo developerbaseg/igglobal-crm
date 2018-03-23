@@ -4,6 +4,7 @@ import { ContactosDataProvider } from '../../providers/contactos-data/contactos-
 import { CargosDataProvider } from '../../providers/cargos-data/cargos-data';
 //import { SelectorPage } from '../../pages/selector/selector';
 import { S2Component } from "../../component/s2.component";
+import { s2SelectorShowResponse } from '../../interfaces/s2-selector-options';
 
 /**
  * Generated class for the ContactoPage page.
@@ -45,9 +46,10 @@ export class ContactoPage extends S2Component{
   ionViewWillEnter() {
     this.cargosProvider.allAsync()
       .subscribe(
-        (data) => {
-          console.log(data);
-          this.dataCoCargo = data;
+        (response) => {
+          console.log(response);
+          this.dataCoCargo = response.data;
+
         },
         (error) => {
           console.error(error);
@@ -97,7 +99,7 @@ export class ContactoPage extends S2Component{
       options: this.dataCoCargo,
       //useGroups: true
     })
-    .then((response) => {
+    .then((response: s2SelectorShowResponse) => {
       console.log(response);
       this.model.CoCargoSe = response.id;
       this.model.NoInternoDescripcion = response.descripcion;

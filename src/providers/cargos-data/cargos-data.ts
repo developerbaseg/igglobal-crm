@@ -23,7 +23,7 @@ export class CargosDataProvider {
       params: params
     }).map((result: any) => {
       console.log(result);
-      return result['results'];
+      return result;
     });
   }
 //--------------oneAsync--------------
