@@ -11,4 +11,3 @@ export interface s2SelectorShowResponse {
     id: any,
     descripcion: any
 }
-
