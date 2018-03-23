@@ -1,0 +1,57 @@
+<!--
+  Generated template for the SelectorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="ok()">
+        Aceptar
+      </button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary" [(ngModel)]="queryText" (ionInput)="search()" placeholder="Search">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-list radio-group [(ngModel)]="selectedValue">
+    <!-- <ion-item *ngFor="let option of options">
+      <ion-radio value="{{option}}" [checked]="option==selectedValue"></ion-radio>
+      <ion-label>
+        {{option}}
+      </ion-label>
+    </ion-item> -->
+    <div [hidden]="!useGroups">
+      <ion-item-group *ngFor="let group of options" [hidden]="group.hide">
+        <ion-item-divider light>{{group.letter}}</ion-item-divider>
+        <ion-item *ngFor="let item of group.items" [hidden]="item.hide">
+          <ion-radio value="{{item[id]}}" [checked]="item[id]==selectedValue"></ion-radio>
+          <ion-label>
+            {{item[descripcion]}}
+          </ion-label>
+        </ion-item>
+      </ion-item-group>
+    </div>
+
+
+    <div [hidden]="useGroups">
+      <ion-item *ngFor="let item of options" [hidden]="item.hide">
+        <ion-radio value="{{item[id]}}" [checked]="item[id]==selectedValue"></ion-radio>
+          <ion-label>
+            {{item[descripcion]}}
+          </ion-label>
+      </ion-item>
+    </div>
+
+  </ion-list>
+</ion-content>
