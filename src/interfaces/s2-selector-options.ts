@@ -6,3 +6,9 @@ export interface s2SelectorOptions {
     options: any[],
     useGroups?: boolean
 }
+
+export interface s2SelectorShowResponse {
+    id: any,
+    descripcion: any
+}
+

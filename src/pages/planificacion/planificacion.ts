@@ -5,6 +5,7 @@ import { S2Component } from '../../component/s2.component';
 
 import { PlanificacionesDataProvider } from '../../providers/planificaciones-data/planificaciones-data';
 import { CuentasDataProvider } from '../../providers/cuentas-data/cuentas-data';
+import { s2SelectorShowResponse } from '../../interfaces/s2-selector-options';
 
 
 /**
@@ -557,7 +558,7 @@ export class PlanificacionPage extends S2Component {
       selectedValue: this.model.NoInterno,
       options: _contacts,
       useGroups: true})
-    .then((response) => {
+    .then((response: s2SelectorShowResponse) => {
       console.log(response);
       this.model.NoInterno = response.id;
       this.model.NoInternoDescripcion = response.descripcion;    
@@ -608,7 +609,7 @@ export class PlanificacionPage extends S2Component {
         selectedValue:this.CoContacto,
         options: _contacts
       })
-    .then((response) => {
+    .then((response: s2SelectorShowResponse) => {
       console.log(response);
       this.CoContacto = response.id;
       this.NameContacto = response.descripcion;
