@@ -17,10 +17,10 @@ export class IGGlobalInterceptor implements HttpInterceptor {
        //.set("headerName", "headerValue")
        const authReq = req.clone({
             headers: req.headers
-                .set('Authorization','Bearer isLEx2vUwdgjOSPynUt5zZ2WzQ47vFN_gNYF_NXVJpboFKBKZRuFRv9JDaj5WpaiBTFt5gnIaPHgf4taUNLT44bzFAI4qLjTPMfzPznZRFwXQjzmqRFzsOAOlORZV6XMczAdZ6DPzmn96G_C5itgRhh5lq644F21RHlE8ZT_CFJcNXmOnBB1Gt8Iqub2nZOfeROzxkzFqOofKIA69t7mSKrj0ZVe7_Vm2PDtPSKaqhSz6Si-I2GZaXduZgqVqTaR5K80QxpNt2C9u7jYEqfPNiWSexCrR5WKxeAdbdmz9-fnBeuqPXNUFmu4uorjelYBHIQgZxDpyWAf1ahkmyAeQMxQJgvG_5KTRXbDuDu12E7vhzcoJgI20xAhI1dAoFs8R2YgbsI-HnOQhnAL8A7VLJfhLRWEHCI9qsDlU8TWwvlx7hW_oL8I1oJNUOIeRAd124576XxQNIMmqCMfSJ7PJg'),
+                .set('Authorization','Bearer DJQBq1WSrUboXj0TOD2RrFaEKKGYL-Hmq7q5pgQIy_v3eyNyv0QlgVSca5zFaAf3cb0IzxZZJfDX8QhQWRQCl93Q4d5Ojtx9JfQ4kQOp42EbwW_PfIaSL-klbbDVwbyp9S7ikER1fl4DJtrvM4jjff-ppGF4j-hSDudSm2TxYOOuUkNyRTOtQ3rVJMoWalxh5HxcKtTgu3fMfgKBu1a0rw37s61_qgId8BY2wzA5a-nEIKc8fRQvph3Ero5n5KcqOvHi6RyBQAQStIgeSWiBVV91rsDTLfMRfoOq_99xAlqC5Dnk37Pz6Yy5yOWf5JHXblCq-X2O8k850j_u0_zBcICFmILgxCQO0iVT7fba3YHqSLNB1iNHZNRZz7zVv_oKV2G1LwZMRud1joehfgPslEWYCjpQM3ZQxMfiKeFvJDNqbqbIS_LoNkYUMTD0R2doRPpQcUJ4TfXkOIxwAWrGTQ'),
             params: req.params
                 .set('cid','DATOS_DESA'),
-            url: 'http://73f4ad63.ngrok.io/' + req.url
+            url: 'http://10.12.13.7:9292/' + req.url
         });
 
        console.log("Sending request with new header now ...");

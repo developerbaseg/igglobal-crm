@@ -2,20 +2,20 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the PlanificacionesDataProvider provider.
+  Generated class for the ContactosDataProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class PlanificacionesDataProvider {
+export class ContactosDataProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello PlanificacionesDataProvider Provider');
+    console.log('Constructor->  provider/contactos-data');
   }
   //--------------allAsync--------------
   allAsync(filters?: any) {
-    let params = new HttpParams().set('id', 'MK-22');
+    let params = new HttpParams().set('id', 'MK-73');
     if (filters) {
       //recorrer las claves del objeto y set a los params
     }
@@ -28,7 +28,7 @@ export class PlanificacionesDataProvider {
   }
   //--------------oneAsync--------------
   oneAsync(filters?: any) {
-    let params = new HttpParams().set('id', 'MK-63');
+    let params = new HttpParams().set('id', 'MK-77');
 
     if (filters) {
       Object.keys(filters).forEach(function (key) {
@@ -44,6 +44,7 @@ export class PlanificacionesDataProvider {
   }
   //--------------saveAsync--------------
   saveAsync() {
-    console.log('guardar en el servidor...');
+    alert('Guardado con Exito');
+    //console.log('guardar en el servidor...');
   }
 }

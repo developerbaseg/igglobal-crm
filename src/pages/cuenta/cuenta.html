@@ -7,25 +7,44 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>CuentaPage</ion-title>
+    <ion-title>Cuenta</ion-title>
   </ion-navbar>
 
 </ion-header>
-
 
 <ion-content>
   <ion-list>
     
     <ion-item>
       <ion-label fixed>Co. Cuenta</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="cuenta.CoCuenta"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label fixed>Razón Social</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="cuenta.RazonSocial"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Denominación</ion-label>
+      <ion-input type="text" [(ngModel)]="cuenta.Denominacion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Observaciones</ion-label>
+      <ion-textarea rows="5" [(ngModel)]="cuenta.Observaciones"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-select [(ngModel)]="cuenta.CoEstado">
+        <ion-option value="0">Activo</ion-option>
+        <ion-option value="1">Inactivo</ion-option>
+      </ion-select>
     </ion-item>
 
   </ion-list>
   <button ion-button (click)="send()">Guardar</button>
+  <button ion-button (click)="getOne()">Obtener</button>
   
 </ion-content>

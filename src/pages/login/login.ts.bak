@@ -11,12 +11,6 @@ import { TabsPage } from '../tabs-page/tabs-page';
 
 import { PlanificacionPage } from '../planificacion/planificacion';
 
-import { EventoPage } from '../evento/evento';
-
-import { CuentaPage } from '../cuenta/cuenta';
-
-import { ContactoPage } from '../contacto/contacto';
-
 @Component({
   selector: 'page-user',
   templateUrl: 'login.html'
@@ -35,22 +29,9 @@ export class LoginPage {
       this.navCtrl.push(TabsPage);
     }
   }
-
+  
   onSignup() {
+    //this.navCtrl.push(SignupPage);
     this.navCtrl.push(PlanificacionPage);
   }
-
-  onEventoapp() {
-    this.navCtrl.push(EventoPage);
-  }
-
-  onCuentaapp() {
-    this.navCtrl.push(CuentaPage);
-  }
-
-  onContactoapp() {
-    this.navCtrl.push(ContactoPage);
-  }
-
 }
-

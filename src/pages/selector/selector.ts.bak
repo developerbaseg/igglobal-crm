@@ -27,7 +27,7 @@ export class SelectorPage {
   queryText: any = '';
   returnObject: any = {
     id: '',
-    descripcion:''
+    descripcion: ''
   };
 
 

@@ -29,23 +29,19 @@ import { SupportPage } from '../pages/support/support';
 
 import { S2Component } from '../component/s2.component';
 import { SelectorPage } from '../pages/selector/selector';
+
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
 import { IGGlobalInterceptor } from "../interceptors/IGGlobalInterceptor";
 
+import { EventoPage } from "../pages/evento/evento";
+import { ContactoPage } from "../pages/contacto/contacto";
+import { CuentaPage } from "../pages/cuenta/cuenta";
 import { PlanificacionPage } from '../pages/planificacion/planificacion';
-import { PlanificacionesDataProvider } from '../providers/planificaciones-data/planificaciones-data';
 
-import { EventoPage } from '../pages/evento/evento';
-import { CuentaPage } from '../pages/cuenta/cuenta';
-import { ContactoPage } from '../pages/contacto/contacto';
-import { EventosDataProvider } from '../providers/eventos-data/eventos-data';
-import { CuentasDataProvider } from '../providers/cuentas-data/cuentas-data';
-import { ContactosDataProvider } from '../providers/contactos-data/contactos-data';
-import { LegajosDataProvider } from '../providers/legajos-data/legajos-data';
-import { CargosDataProvider } from '../providers/cargos-data/cargos-data';
-import { DepartamentosDataProvider } from '../providers/departamentos-data/departamentos-data';
+import { PlanificacionesDataProvider } from '../providers/planificaciones-data/planificaciones-data';
+import { CuentasDataProvider} from '../providers/cuentas-data/cuentas-data';
 
 @NgModule({
   declarations: [
@@ -65,11 +61,13 @@ import { DepartamentosDataProvider } from '../providers/departamentos-data/depar
     TutorialPage,
     SupportPage,
     //propio de la app
+    // S2Component,
     SelectorPage,
     PlanificacionPage,
     EventoPage,
-    CuentaPage,
-    ContactoPage
+    ContactoPage,
+    CuentaPage
+
     //
   ],
   imports: [
@@ -113,11 +111,12 @@ import { DepartamentosDataProvider } from '../providers/departamentos-data/depar
     TutorialPage,
     SupportPage,
     //propio de la app
+    //S2Component,
     SelectorPage,
     PlanificacionPage,
-    EventoPage,
     CuentaPage,
-    ContactoPage
+    ContactoPage,
+    EventoPage
     //
   ],
   providers: [
@@ -133,12 +132,7 @@ import { DepartamentosDataProvider } from '../providers/departamentos-data/depar
     SplashScreen,
     S2Component,
     PlanificacionesDataProvider,
-    EventosDataProvider,
-    CuentasDataProvider,
-    ContactosDataProvider,
-    LegajosDataProvider,
-    CargosDataProvider,
-    DepartamentosDataProvider
+    CuentasDataProvider
   ]
 })
 export class AppModule { }

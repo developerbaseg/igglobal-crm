@@ -21,44 +21,55 @@
 <ion-content>
   <ion-list>
 
-    <ion-item>
-      <ion-label fixed>No. Interno</ion-label>
-      <ion-input type="text" [(ngModel)]="planificacion.UsuarioOrigen"></ion-input>
-    </ion-item>
+    <button ion-item (click)="seleccionarCuenta()">
+      <ion-label fixed>Razón Social</ion-label>
+      <ion-input readonly [(ngModel)]="model.NoInternoDescripcion" ></ion-input>
+    </button>
 
-    <ion-item>
+  <button ion-item (click)="seleccionarContacto()">
+    <ion-label fixed>Co. Contacto</ion-label>
+    <ion-input readonly [(ngModel)]="NameContacto" ></ion-input>
+    <!-- value="Milagro Salazar Hnos." -->
+</button>
+  <!-- 
+      <ion-item>
+        <ion-label fixed>No. Interno</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item> -->
+
+    <!-- <ion-item>
       <ion-label fixed>Co. Contacto</ion-label>
-      <ion-input type="text" [(ngModel)]="planificacion.CoContacto"></ion-input>
-    </ion-item>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item> -->
 
     <ion-item>
       <ion-label fixed>Co. Acción</ion-label>
-      <ion-input type="text" [(ngModel)]="planificacion.CoAccion"></ion-input>
+      <ion-input type="text" value=""></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Descripción</ion-label>
-      <ion-textarea rows="5" [(ngModel)]="planificacion.Descripcion"></ion-textarea>
+      <ion-textarea placeholder="Opcional"></ion-textarea>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="planificacion.Usuario"></ion-input>
+      <ion-input type="text" value=""></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Fecha</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="planificacion.Fecha"></ion-datetime>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="model.Fecha"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label>Hora</ion-label>
-      <ion-datetime displayFormat="HH:mm" [(ngModel)]="planificacion.Hora"></ion-datetime>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="model.Hora"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label>Prioridad</ion-label>
-      <ion-select [(ngModel)]="planificacion.Prioridad">
+      <ion-select [(ngModel)]="model.Prioridad">
         <ion-option value="B">Baja</ion-option>
         <ion-option value="M">Media</ion-option>
         <ion-option value="A">Alta</ion-option>
@@ -66,7 +77,6 @@
     </ion-item>
   </ion-list>
 
-  <button ion-button (click)="send()">Guardar</button>
-  <button ion-button (click)="getOne()">Obtener</button>
+  <button ion-button (click)="send()">Guardar!</button>
   
 </ion-content>

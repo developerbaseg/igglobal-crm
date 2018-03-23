@@ -7,14 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Contacto</ion-title>
-
-    <ion-buttons end>
-      <button ion-button icon-only (click)="saveAll()">
-        <ion-icon name="archive"></ion-icon>
-      </button>
-    </ion-buttons>
-
+    <ion-title>ContactoPage</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,7 +18,7 @@
     
     <ion-item>
       <ion-label>No. Interno</ion-label>
-      <ion-select [(ngModel)]="contacto.NoInterno">
+      <ion-select [(ngModel)]="cointerno">
         <ion-option value="1">1</ion-option>
         <ion-option value="2">2</ion-option>
       </ion-select>
@@ -33,32 +26,41 @@
 
     <ion-item>
       <ion-label fixed>Nombre</ion-label>
-      <ion-input type="text" [(ngModel)]="contacto.Nombres"></ion-input>
+      <ion-input type="text" value=""></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>Apellido</ion-label>
-      <ion-input type="text" [(ngModel)]="contacto.Apellido"></ion-input>
+      <ion-input type="text" value=""></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Contacto Principal</ion-label>
-      <ion-toggle [(ngModel)]="contacto.CoContacto"></ion-toggle>
+      <ion-checkbox [(ngModel)]="CoPrincipal"></ion-checkbox>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Co. Cargo</ion-label>
+      <ion-select [(ngModel)]="cocargo">
+        <ion-option value="1">Empleado</ion-option>
+        <ion-option value="2">Supervisor</ion-option>
+        <ion-option value="3">Tesorero</ion-option>
+      </ion-select>
     </ion-item>
 
-    <button ion-item (click)="seleccionCoCargo()">
-      <ion-label fixed>Co. Cargo</ion-label>
-      <ion-input readonly [(ngModel)]="contacto.CoCargoSe" ></ion-input>
-    </button>
-
-    <button ion-item (click)="seleccionDepartamento()">
-      <ion-label fixed>Departamento</ion-label>
-      <ion-input readonly [(ngModel)]="contacto.DepartamentoSe" ></ion-input>
-    </button>
+    <ion-item>
+      <ion-label>Departamento</ion-label>
+      <ion-select [(ngModel)]="Departamento">
+        <ion-option value="1">Administracion</ion-option>
+        <ion-option value="2">Comercial</ion-option>
+        <ion-option value="3">Gerencia</ion-option>
+        <ion-option value="4">Sistemas</ion-option>
+      </ion-select>
+    </ion-item>
 
     <ion-item>
       <ion-label fixed>Observaciones</ion-label>
-      <ion-textarea rows="5" [(ngModel)]="contacto.Observaciones"></ion-textarea>
+      <ion-textarea rows="5" placeholder=""></ion-textarea>
     </ion-item>
 
     <ion-item>
@@ -70,7 +72,6 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <button ion-button (click)="getAll()">Obtiene Todo</button>
-  <button ion-button (click)="getOne()">Obtener</button>
+  <button ion-button (click)="send()">Guardar</button>
 
 </ion-content>
