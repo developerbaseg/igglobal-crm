@@ -19,7 +19,6 @@ import { s2SelectorShowResponse } from '../../interfaces/s2-selector-options';
 })
 export class ContactoPage extends S2Component{
   profile:{};
-  
   model: any;
   dataCoCargo: any[] =[];
   fecha: any;
