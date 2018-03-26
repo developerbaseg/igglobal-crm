@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class LegajosDataProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello LegajosDataProvider Provider');
+    //console.log('Hello LegajosDataProvider Provider');
   }
   //--------------allAsync--------------
   allAsync(filters?: any) {
