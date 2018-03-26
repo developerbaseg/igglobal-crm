@@ -11,11 +11,12 @@ import { Injectable } from '@angular/core';
 export class DepartamentosDataProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello CargosDataProvider Provider');
+    //console.log('Hello CargosDataProvider Provider');
   }
+  //--------------allAsync--------------
   allAsync(filters?: any) {
     let params = new HttpParams().set('id', 'MK-3');
-    alert('Alert de Departamentos-Data');
+    //alert('Alert de Departamentos-Data');
     if (filters) {
       //recorrer las claves del objeto y set a los params
     }
@@ -23,10 +24,11 @@ export class DepartamentosDataProvider {
       params: params
     }).map((result: any) => {
       console.log(result);
-      return result['results'];
+      return result;
+      //return result['results'];
     });
   }
-
+  //--------------saveAsync--------------
   saveAsync() {
     console.log('guardar en el servidor...');
   }
