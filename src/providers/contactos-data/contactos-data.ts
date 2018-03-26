@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class ContactosDataProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Constructor->  provider/contactos-data');
+    //console.log('Constructor->  provider/contactos-data');
   }
   //--------------allAsync--------------
   allAsync(filters?: any) {
@@ -23,7 +23,8 @@ export class ContactosDataProvider {
       params: params
     }).map((result: any) => {
       console.log(result);
-      return result['results'];
+      return result;
+      //return result['results'];
     });
   }
   //--------------oneAsync--------------
