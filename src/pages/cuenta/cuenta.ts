@@ -38,8 +38,7 @@ export class CuentaPage {
   }
 
   send() {
-    console.log('armar el DTO que espera el servidor -> copiarse el formato que envia el POST del IGGLOBAL Online')
-    //this.planificacionesProvider.saveAsync();
+    //console.log('armar el DTO que espera el servidor -> copiarse el formato que envia el POST del IGGLOBAL Online')
     this.cuentasProvider.allAsync()
     .subscribe(
       (data) => { // Success
