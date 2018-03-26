@@ -23,8 +23,7 @@ export class ContactosDataProvider {
       params: params
     }).map((result: any) => {
       console.log(result);
-      return result;
-      //return result['results'];
+      return result['results'];
     });
   }
   //--------------oneAsync--------------

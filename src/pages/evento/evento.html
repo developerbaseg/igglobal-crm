@@ -28,27 +28,26 @@
 
     <button ion-item (click)="seleccionarNoInterno()">
       <ion-label fixed>No. Interno</ion-label>
-      <ion-input readonly [(ngModel)]="model.NoInternoDescripcion"></ion-input>
+      <ion-input readonly [(ngModel)]="model.NoInternoDescripcion" ></ion-input>
     </button>
 
-    <button ion-item (click)="seleccionCoContacto()">
-      <ion-label fixed>Co. Contacto</ion-label>
-      <ion-input readonly [(ngModel)]="model.CoContactoDescripcion"></ion-input>
-    </button>
+    <ion-item>
+      <ion-label>Co. Contacto</ion-label>
+      <ion-select [(ngModel)]="evento.Hora">
+        <ion-option value="1">Fulano</ion-option>
+        <ion-option value="2">Fulanito</ion-option>
+        <ion-option value="3">Fulanazo</ion-option>
+      </ion-select>
+    </ion-item>
 
-    <button ion-item (click)="seleccionCoAccion()">
-      <ion-label fixed>Co. Accion</ion-label>
-      <ion-input readonly [(ngModel)]="model.CoAccionDescripcion"></ion-input>
-    </button>
-
-    <!-- <ion-item>
+    <ion-item>
       <ion-label>Co. Accion</ion-label>
       <ion-select [(ngModel)]="evento.CoAccion">
         <ion-option value="1">Accion1</ion-option>
         <ion-option value="2">Accion2</ion-option>
         <ion-option value="3">Accion3</ion-option>
       </ion-select>
-    </ion-item> -->
+    </ion-item>
 
     <ion-item>
       <ion-label fixed>Descripción</ion-label>

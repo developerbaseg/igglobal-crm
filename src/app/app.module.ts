@@ -46,7 +46,6 @@ import { ContactosDataProvider } from '../providers/contactos-data/contactos-dat
 import { LegajosDataProvider } from '../providers/legajos-data/legajos-data';
 import { CargosDataProvider } from '../providers/cargos-data/cargos-data';
 import { DepartamentosDataProvider } from '../providers/departamentos-data/departamentos-data';
-import { AccionDataProvider } from '../providers/accion-data/accion-data';
 
 @NgModule({
   declarations: [
@@ -139,8 +138,7 @@ import { AccionDataProvider } from '../providers/accion-data/accion-data';
     ContactosDataProvider,
     LegajosDataProvider,
     CargosDataProvider,
-    DepartamentosDataProvider,
-    AccionDataProvider
+    DepartamentosDataProvider
   ]
 })
 export class AppModule { }
