@@ -46,14 +46,14 @@
       <ion-toggle [(ngModel)]="contacto.CoContacto"></ion-toggle>
     </ion-item>
 
-    <button ion-item (click)="seleccionCoCargo()">
+    <button ion-item (click)="seleccionCargo()">
       <ion-label fixed>Co. Cargo</ion-label>
-      <ion-input readonly [(ngModel)]="contacto.CoCargoSe" ></ion-input>
+      <ion-input readonly [(ngModel)]="model.CoCargoDescripcion"></ion-input>
     </button>
 
     <button ion-item (click)="seleccionDepartamento()">
-      <ion-label fixed>Departamento</ion-label>
-      <ion-input readonly [(ngModel)]="contacto.DepartamentoSe" ></ion-input>
+      <ion-label fixed>Co. Departamento</ion-label>
+      <ion-input readonly [(ngModel)]="model.CoDepartamentoDescripcion"></ion-input>
     </button>
 
     <ion-item>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { EventosDataProvider } from '../../providers/eventos-data/eventos-data';
 import { CuentasDataProvider } from '../../providers/cuentas-data/cuentas-data';
+import { ContactosDataProvider } from '../../providers/contactos-data/contactos-data';
+import { AccionDataProvider } from '../../providers/accion-data/accion-data';
 //import { SelectorPage } from '../../pages/selector/selector';
 import { S2Component } from "../../component/s2.component";
 import { s2SelectorShowResponse } from '../../interfaces/s2-selector-options';
@@ -21,10 +23,12 @@ export class EventoPage extends S2Component {
   profile: {};
   model: any;
   dataNoInterno: any[] = [];
+  dataCoContacto: any[] = [];
+  dataCoAccion: any[] = [];
   fecha: any;
   users: any[] = [];
   evento: any = {};
-  constructor(public navCtrl: NavController, public navParams: NavParams, public eventosProvider: EventosDataProvider, public cuentasProvider: CuentasDataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public eventosProvider: EventosDataProvider, public cuentasProvider: CuentasDataProvider, public contactosProvider: ContactosDataProvider, public accionProvider: AccionDataProvider) {
     super(navCtrl);
     this.model = {
       Fecha: '2018-03-14',
@@ -48,6 +52,26 @@ export class EventoPage extends S2Component {
         (data) => {
           console.log(data);
           this.dataNoInterno = data;
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
+    this.contactosProvider.allAsync()
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.dataCoContacto = response.data;
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
+    this.accionProvider.allAsync()
+      .subscribe(
+        (response) => {
+          console.log(response);
+          this.dataCoAccion = response.data;
         },
         (error) => {
           console.error(error);
@@ -80,7 +104,7 @@ export class EventoPage extends S2Component {
         }
       )
   }
-  //-------------Select NoInterno---------------
+  //-------------seleccionarNoInterno()---------------
   seleccionarNoInterno() {
     this.s2ShowSelector({
       title: 'No. Interno',
@@ -94,6 +118,38 @@ export class EventoPage extends S2Component {
       console.log(response);
       this.model.NoInternoCE = response.id;
       this.model.NoInternoDescripcion = response.descripcion;
+    })
+  }
+  //-------------seleccionCoContacto()---------------
+  seleccionCoContacto() {
+    this.s2ShowSelector({
+      title: 'Co. Contacto',
+      id: 'CoContacto',
+      descripcion: 'Nombre',
+      selectedValue: this.model.CoContactoSe,
+      options: this.dataCoContacto,
+      //useGroups: true
+    })
+    .then((response: s2SelectorShowResponse) => {
+      console.log(response);
+      this.model.CoContactoSe = response.id;
+      this.model.CoContactoDescripcion = response.descripcion;
+    })
+  }
+  //-------------seleccionCoAccion()---------------
+  seleccionCoAccion() {
+    this.s2ShowSelector({
+      title: 'Co. Accion',
+      id: 'CoAccion',
+      descripcion: 'Accion',
+      selectedValue: this.model.CoAccionSe,
+      options: this.dataCoAccion,
+      //useGroups: true
+    })
+    .then((response: s2SelectorShowResponse) => {
+      console.log(response);
+      this.model.CoAccionSe = response.id;
+      this.model.CoAccionDescripcion = response.descripcion;
     })
   }
 
