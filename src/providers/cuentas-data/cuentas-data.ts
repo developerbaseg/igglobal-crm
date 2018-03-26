@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class CuentasDataProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Constructor CuentasDataProvider');
+    //console.log('Constructor CuentasDataProvider');
   }
   //--------------allAsync--------------
   allAsync(filters?: any) {
